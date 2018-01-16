@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   version = "1.3">
+   <BuildAction>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForRunning = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9518562C20079AA600826D35"
+               BuildableName = "ChongDingTerminator.app"
+               BlueprintName = "ChongDingTerminator"
+               ReferencedContainer = "container:ChongDingTerminator.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <LaunchAction
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9518562C20079AA600826D35"
+            BuildableName = "ChongDingTerminator.app"
+            BlueprintName = "ChongDingTerminator"
+            ReferencedContainer = "container:ChongDingTerminator.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+</Scheme>
