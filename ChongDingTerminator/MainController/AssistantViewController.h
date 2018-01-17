@@ -10,7 +10,7 @@
 
 @interface AssistantViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UILabel * label;
+@property(nonatomic, strong) IBOutlet UILabel *label;
 
 @end
 

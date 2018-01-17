@@ -10,7 +10,7 @@
 #import "CDWebView.h"
 
 @interface CommunicateViewController ()
-@property (nonatomic, strong) IBOutlet CDWebView* webView;
+@property(nonatomic, strong) IBOutlet CDWebView *webView;
 @end
 
 @implementation CommunicateViewController

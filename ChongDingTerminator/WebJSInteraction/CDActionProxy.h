@@ -12,15 +12,15 @@
 @protocol CDJsObjectProtocol <JSExport>
 
 JSExportAs(openOrDownloadApk,
-           - (void)openOrDownloadApk:(id)pkgStr downloadUrl:(id)url
-           );
+        -(void) openOrDownloadApk:(id)pkgStr downloadUrl:(id)url
+);
 
 JSExportAs(openOrDownloadApk,
-           - (void)shareApp:(id)qrImageUrl
-           );
+        -(void) shareApp:(id)qrImageUrl
+);
 
 @end
 
-@interface CDActionProxy : NSObject
+@interface CDActionProxy : NSObject <CDJsObjectProtocol>
 
 @end

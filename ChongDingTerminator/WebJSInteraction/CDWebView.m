@@ -9,10 +9,15 @@
 #import "CDWebView.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "CDActionProxy.h"
+#import "MJRefresh.h"
+#import "CDHud.h"
+
+#define ADD_REFREFRESH true
 
 @interface CDWebView () <UIWebViewDelegate>
 
-@property (nonatomic, strong) JSContext *context;
+@property(nonatomic, strong) JSContext *context;
+@property(nonatomic, strong) NSString *url;
 
 @end
 
@@ -26,6 +31,58 @@
     return self;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.delegate = self;
+        self.scrollView.bounces = false;
+        if (ADD_REFREFRESH) {
+            MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
+                                                                             refreshingAction:@selector(headerRefresh)];
+            header.lastUpdatedTimeLabel.hidden = YES;
+            [header setTitle:@"下拉刷新" forState:MJRefreshStateWillRefresh];
+            [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+            [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
+            [header setTitle:@"玩命加载中..." forState:MJRefreshStateRefreshing];
+            self.scrollView.mj_header = header;
+            //        self.scrollView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
+            //                                                                         refreshingAction:@selector(footerRefresh)];
+        }
+
+    }
+    return self;
+}
+
+- (void)loadURL:(NSString *)url {
+    self.url = url;
+    [self loadData];
+}
+
+- (void)loadData {
+    [self loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
+}
+
+#pragma mark - 下拉刷新
+
+- (void)headerRefresh {
+    [self loadData];
+}
+
+#pragma mark - 上拉加载
+
+- (void)footerRefresh {
+    [self loadData];
+}
+
+#pragma mark - 结束下拉刷新和上拉加载
+
+- (void)endRefresh {
+    //当请求数据成功或失败后，如果你导入的MJRefresh库是最新的库，就用下面的方法结束下拉刷新和上拉加载事件
+    [self.scrollView.mj_header endRefreshing];
+    [self.scrollView.mj_footer endRefreshing];
+    [CDHud hideHudInView:self];
+}
+
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
@@ -34,6 +91,7 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     NSLog(@"webViewDidStartLoad");
+    [CDHud showHud:@"加载中..." inView:self];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -42,14 +100,21 @@
     _context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
     CDActionProxy *cdActionProxy = [[CDActionProxy alloc] init];
     _context[@"CWInterface"] = cdActionProxy;
+
+    if ([self.cdDelegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
+        [self.cdDelegate webViewDidFinishLoad:self];
+    }
+    [self endRefresh];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     NSLog(@"didFailLoadWithError");
+    [self endRefresh];
 }
 
 #pragma mark - Notification info
+
 - (void)shareSuccess {
-    [_context evaluateScript: @"shareSuccess()"];
+    [_context evaluateScript:@"shareSuccess()"];
 }
 @end

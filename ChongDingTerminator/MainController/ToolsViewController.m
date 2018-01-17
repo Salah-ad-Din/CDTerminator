@@ -9,8 +9,8 @@
 #import "ToolsViewController.h"
 #import "CDWebView.h"
 
-@interface ToolsViewController ()
-@property (weak, nonatomic) IBOutlet CDWebView *webView;
+@interface ToolsViewController () <CDWebViewDelegate>
+@property(weak, nonatomic) IBOutlet CDWebView *webView;
 @end
 
 @implementation ToolsViewController
@@ -18,8 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSString *path = @"https://www.baidu.com";
-    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:path]]];
+    [_webView loadURL:@"https://www.baidu.com"];
+
+    // Configure View Controller
+    self.webView.cdDelegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,5 +29,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - CDWebviewDelegate
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+
+}
 @end

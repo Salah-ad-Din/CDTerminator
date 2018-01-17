@@ -19,18 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    UITapGestureRecognizer * gr = [UITapGestureRecognizer new];
+    UITapGestureRecognizer *gr = [UITapGestureRecognizer new];
     [gr addTarget:self action:@selector(push:)];
     [self.label addGestureRecognizer:gr];
     [self.label setUserInteractionEnabled:YES];
 }
 
-- (void)push:(UITapGestureRecognizer* )gr {
+- (void)push:(UITapGestureRecognizer *)gr {
 //    [self performSegueWithIdentifier:CDShare sender:self];
     //显示分享面板
     [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
         // 根据获取的platformType确定所选平台进行下一步操作
     }];
+
 }
 
 - (void)didReceiveMemoryWarning {

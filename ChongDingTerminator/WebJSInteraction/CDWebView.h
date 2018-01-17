@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CDWebViewDelegate <UIWebViewDelegate>
+
+@end
+
+
 @interface CDWebView : UIWebView
+
+@property(nonatomic, weak) id <CDWebViewDelegate> cdDelegate;
+
+- (void)loadURL:(NSString *)url;
 
 // 分享成功调用webview的方法
 - (void)shareSuccess;

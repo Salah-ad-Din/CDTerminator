@@ -11,11 +11,11 @@
 @implementation CDActionProxy
 
 - (void)openOrDownloadApk:(id)pkgStr downloadUrl:(id)url {
-    
+
 }
 
 - (void)shareApp:(id)qrImageUrl {
-    
+
 }
 
 @end

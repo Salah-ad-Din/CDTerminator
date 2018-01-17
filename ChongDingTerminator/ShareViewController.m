@@ -9,7 +9,7 @@
 #import "ShareViewController.h"
 
 @interface ShareViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *back;
+@property(weak, nonatomic) IBOutlet UIButton *back;
 
 @end
 
