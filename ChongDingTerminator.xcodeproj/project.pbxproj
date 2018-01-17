@@ -69,6 +69,7 @@
 		95873D0C200EE11B001A7489 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 95873D0B200EE11B001A7489 /* MBProgressHUD.m */; };
 		95873D12200EE46E001A7489 /* CDHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 95873D11200EE46E001A7489 /* CDHud.m */; };
 		95873D16200F0633001A7489 /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95873D15200F0633001A7489 /* LocalNotificationManager.m */; };
+		95873D19200F3B18001A7489 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 95873D18200F3B18001A7489 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +179,8 @@
 		95873D11200EE46E001A7489 /* CDHud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDHud.m; sourceTree = "<group>"; };
 		95873D14200F0633001A7489 /* LocalNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalNotificationManager.h; sourceTree = "<group>"; };
 		95873D15200F0633001A7489 /* LocalNotificationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationManager.m; sourceTree = "<group>"; };
+		95873D17200F3B18001A7489 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		95873D18200F3B18001A7489 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +426,8 @@
 				9518564120079AA600826D35 /* Info.plist */,
 				9518564220079AA600826D35 /* main.m */,
 				9545BA2F200CAC2F00012535 /* PrefixHeader.h */,
+				95873D17200F3B18001A7489 /* Constants.h */,
+				95873D18200F3B18001A7489 /* Constants.m */,
 			);
 			path = ChongDingTerminator;
 			sourceTree = "<group>";
@@ -665,6 +670,7 @@
 				95873CF8200EDC4A001A7489 /* UIScrollView+MJExtension.m in Sources */,
 				95873D00200EDC4A001A7489 /* MJRefreshAutoNormalFooter.m in Sources */,
 				9518563820079AA600826D35 /* ToolsViewController.m in Sources */,
+				95873D19200F3B18001A7489 /* Constants.m in Sources */,
 				95873D03200EDC4A001A7489 /* MJRefreshGifHeader.m in Sources */,
 				95873D08200EDC4A001A7489 /* MJRefreshComponent.m in Sources */,
 				95873D01200EDC4A001A7489 /* MJRefreshNormalHeader.m in Sources */,

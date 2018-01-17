@@ -28,10 +28,16 @@
 - (void)push:(UITapGestureRecognizer *)gr {
 //    [self performSegueWithIdentifier:CDShare sender:self];
     //显示分享面板
-    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        // 根据获取的platformType确定所选平台进行下一步操作
-    }];
+//    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+//        // 根据获取的platformType确定所选平台进行下一步操作
+//    }];
 
+//    NSURL *scheme = [NSURL URLWithString:@"chongding://"];
+//    if ([[UIApplication sharedApplication] canOpenURL:scheme]) {
+//        [[UIApplication sharedApplication] openURL:scheme];
+//    } else {
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/id1323452054?mt=8"]];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
