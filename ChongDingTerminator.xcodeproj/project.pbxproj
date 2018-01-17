@@ -68,6 +68,7 @@
 		95873D08200EDC4A001A7489 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 95873CF2200EDC4A001A7489 /* MJRefreshComponent.m */; };
 		95873D0C200EE11B001A7489 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 95873D0B200EE11B001A7489 /* MBProgressHUD.m */; };
 		95873D12200EE46E001A7489 /* CDHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 95873D11200EE46E001A7489 /* CDHud.m */; };
+		95873D16200F0633001A7489 /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95873D15200F0633001A7489 /* LocalNotificationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +176,8 @@
 		95873D0B200EE11B001A7489 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		95873D10200EE46E001A7489 /* CDHud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDHud.h; sourceTree = "<group>"; };
 		95873D11200EE46E001A7489 /* CDHud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDHud.m; sourceTree = "<group>"; };
+		95873D14200F0633001A7489 /* LocalNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalNotificationManager.h; sourceTree = "<group>"; };
+		95873D15200F0633001A7489 /* LocalNotificationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +406,7 @@
 		9518562F20079AA600826D35 /* ChongDingTerminator */ = {
 			isa = PBXGroup;
 			children = (
+				95873D13200F060C001A7489 /* Utils */,
 				9545BA27200CA01E00012535 /* WebJSInteraction */,
 				9545BA26200C9FEB00012535 /* MainController */,
 				91846303200E37E300ABB2B3 /* Plug-In */,
@@ -551,6 +555,15 @@
 			path = MBProgreeHUD;
 			sourceTree = "<group>";
 		};
+		95873D13200F060C001A7489 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				95873D14200F0633001A7489 /* LocalNotificationManager.h */,
+				95873D15200F0633001A7489 /* LocalNotificationManager.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -675,6 +688,7 @@
 				95873CF6200EDC4A001A7489 /* MJRefreshConst.m in Sources */,
 				95873D05200EDC4A001A7489 /* MJRefreshHeader.m in Sources */,
 				95873CFC200EDC4A001A7489 /* MJRefreshBackStateFooter.m in Sources */,
+				95873D16200F0633001A7489 /* LocalNotificationManager.m in Sources */,
 				95873CF5200EDC4A001A7489 /* UIScrollView+MJRefresh.m in Sources */,
 				95873CFB200EDC4A001A7489 /* MJRefreshBackGifFooter.m in Sources */,
 				95873D07200EDC4A001A7489 /* MJRefreshAutoFooter.m in Sources */,

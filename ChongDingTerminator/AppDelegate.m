@@ -64,6 +64,10 @@
     return result;
 }
 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    
+}
+
 - (void)configUMeng {
     // 配置友盟SDK产品并并统一初始化
     // [UMConfigure setEncryptEnabled:YES]; // optional: 设置加密传输, 默认NO.

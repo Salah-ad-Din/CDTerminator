@@ -9,6 +9,8 @@
 #ifndef PrefixHeader_h
 #define PrefixHeader_h
 
+#import <UIKit/UIDevice.h>
+
 #define IS_IPAD             ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 #define IS_IPHONE           ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
 #define IS_IPHONE5          (IS_IPHONE && (CGSizeEqualToSize(CGSizeMake(320, 568), [[UIScreen mainScreen] bounds].size) || CGSizeEqualToSize(CGSizeMake(568, 320), [[UIScreen mainScreen] bounds].size)))
