@@ -12,7 +12,7 @@
 #import "MJRefresh.h"
 #import "CDHud.h"
 
-#define ADD_REFREFRESH true
+#define ADD_REFREFRESH false
 
 @interface CDWebView () <UIWebViewDelegate>
 
@@ -27,6 +27,7 @@
     self = [super init];
     if (self) {
         self.delegate = self;
+        
     }
     return self;
 }

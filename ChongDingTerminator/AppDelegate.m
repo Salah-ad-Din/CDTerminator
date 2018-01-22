@@ -11,6 +11,8 @@
 #import <UMAnalytics/MobClick.h>        // 统计组件
 #import <UMShare/UMShare.h>             // 分享组件
 
+#define UMENG_APPKEY @"5a655ed08f4a9d332b0000ef"
+
 @interface AppDelegate ()
 
 @end
@@ -72,7 +74,7 @@
     // 配置友盟SDK产品并并统一初始化
     // [UMConfigure setEncryptEnabled:YES]; // optional: 设置加密传输, 默认NO.
     // [UMConfigure setLogEnabled:YES]; // 开发调试时可在console查看友盟日志显示，发布产品必须移除。
-    [UMConfigure initWithAppkey:@"5a5e06648f4a9d4f0e000335" channel:@"App Store"];
+    [UMConfigure initWithAppkey:UMENG_APPKEY channel:@"App Store"];
     /* appkey: 开发者在友盟后台申请的应用获得（可在统计后台的 “统计分析->设置->应用信息” 页面查看）*/
 
     // 统计组件配置
