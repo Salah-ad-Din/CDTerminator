@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [_webView loadURL:@"https://www.baidu.com"];
+    [_webView loadURL:@"http://test.web.vip.miui.com/page/answer"];
 
     // Configure View Controller
     self.webView.cdDelegate = self;
