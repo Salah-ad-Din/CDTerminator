@@ -12,7 +12,7 @@
 @end
 
 @protocol CDWebViewDelegate <UIWebViewDelegate>
-
+- (void)share:(id)model;
 @end
 
 
@@ -21,5 +21,6 @@
 @property(nonatomic, weak) id <CDWebViewDelegate> cdDelegate;
 
 - (void)loadURL:(NSString *)url;
+- (void)shareSuccess;
 
 @end

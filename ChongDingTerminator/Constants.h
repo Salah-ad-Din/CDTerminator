@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define ADD_REFREFRESH false
+#define ADD_REFREFRESH NO
 #define MAIN_PAGE @"http://test.web.vip.miui.com/page/answer"
 
 // 西瓜视频

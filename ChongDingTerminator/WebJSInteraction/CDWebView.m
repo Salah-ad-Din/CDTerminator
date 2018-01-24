@@ -12,7 +12,7 @@
 #import "MJRefresh.h"
 #import "CDHud.h"
 #import "Constants.h"
-#import "extobjc.h"
+
 
 @implementation NSURLRequest (DataController)
 + (BOOL)allowsAnyHTTPSCertificateForHost:(NSString *)host {
@@ -43,7 +43,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.delegate = self;
-        self.scrollView.bounces = false;
+        self.scrollView.bounces = NO;
         if (ADD_REFREFRESH) {
             MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
                                                                              refreshingAction:@selector(headerRefresh)];
@@ -123,6 +123,12 @@
 }
 
 #pragma mark - Notification info
+
+- (void)share:(id)model {
+    if ([self.cdDelegate respondsToSelector:@selector(share:)]) {
+        [self.cdDelegate share:model];
+    }
+}
 
 - (void)shareSuccess {
     [_context evaluateScript:@"shareSuccess()"];

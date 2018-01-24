@@ -21,8 +21,10 @@ JSExportAs(shareApp,
 
 @end
 
-@protocol CDActionDelegate
-- (void)shareSuccess;
+@protocol CDActionDelegate <NSObject>
+
+- (void)share:(id)model;
+
 @end
 
 @interface CDActionProxy : NSObject <CDJsObjectProtocol>

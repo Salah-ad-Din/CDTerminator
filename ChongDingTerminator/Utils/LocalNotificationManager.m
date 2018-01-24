@@ -19,7 +19,7 @@ static NSString *kLocalNotificationIdentifier = @"LocalNotificationIdentifier";
     [self cancelLocalNotification:kLocalNotificationIdentifier];
 
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
+    NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
                         | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     NSDateComponents *components = [calendar components:unitFlags fromDate:date];
 
@@ -73,7 +73,7 @@ static NSString *kLocalNotificationIdentifier = @"LocalNotificationIdentifier";
         NSArray *notifications = [UIApplication sharedApplication].scheduledLocalNotifications;
         for (UILocalNotification *notification in notifications) {
             NSDictionary *userInfo = notification.userInfo;
-            NSString *identifier = [userInfo objectForKey:@"notificationIdentifier"];
+            NSString *identifier = userInfo[@"notificationIdentifier"];
             if ([identifier isEqualToString:notificationIdentifier]) {
                 [[UIApplication sharedApplication] cancelLocalNotification:notification];
                 break;
