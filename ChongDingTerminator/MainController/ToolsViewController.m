@@ -8,6 +8,7 @@
 
 #import "ToolsViewController.h"
 #import "CDWebView.h"
+#import "Constants.h"
 
 @interface ToolsViewController () <CDWebViewDelegate>
 @property(weak, nonatomic) IBOutlet CDWebView *webView;
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [_webView loadURL:@"http://test.web.vip.miui.com/page/answer"];
+    [_webView loadURL:MAIN_PAGE];
 
     // Configure View Controller
     self.webView.cdDelegate = self;

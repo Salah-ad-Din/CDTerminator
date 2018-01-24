@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define ADD_REFREFRESH false
+#define MAIN_PAGE @"http://test.web.vip.miui.com/page/answer"
+
 // 西瓜视频
 extern NSString* const SCHEME_XIGUA;
 

@@ -11,10 +11,17 @@
 #import "CDActionProxy.h"
 #import "MJRefresh.h"
 #import "CDHud.h"
+#import "Constants.h"
+#import "extobjc.h"
 
-#define ADD_REFREFRESH false
+@implementation NSURLRequest (DataController)
++ (BOOL)allowsAnyHTTPSCertificateForHost:(NSString *)host {
+    return YES;
+}
+@end
 
-@interface CDWebView () <UIWebViewDelegate>
+
+@interface CDWebView () <UIWebViewDelegate, CDActionDelegate>
 
 @property(nonatomic, strong) JSContext *context;
 @property(nonatomic, strong) NSString *url;
@@ -27,7 +34,7 @@
     self = [super init];
     if (self) {
         self.delegate = self;
-        
+
     }
     return self;
 }
@@ -87,6 +94,7 @@
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSLog(@"%@", request.description);
     return YES;
 }
 
@@ -100,6 +108,7 @@
     //首先创建JSContext 对象（此处通过当前webView的键获取到jscontext)
     _context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
     CDActionProxy *cdActionProxy = [[CDActionProxy alloc] init];
+    cdActionProxy.delegate = self;
     _context[@"CWInterface"] = cdActionProxy;
 
     if ([self.cdDelegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {

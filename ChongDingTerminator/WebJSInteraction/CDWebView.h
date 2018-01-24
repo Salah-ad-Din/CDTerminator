@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@interface NSURLRequest (DataController)
+@end
+
 @protocol CDWebViewDelegate <UIWebViewDelegate>
 
 @end
@@ -18,8 +21,5 @@
 @property(nonatomic, weak) id <CDWebViewDelegate> cdDelegate;
 
 - (void)loadURL:(NSString *)url;
-
-// 分享成功调用webview的方法
-- (void)shareSuccess;
 
 @end

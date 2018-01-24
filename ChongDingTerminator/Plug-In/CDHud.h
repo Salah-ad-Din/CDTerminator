@@ -8,17 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
 @interface CDHud : NSObject
 
-+ (void)showHud;
++ (MBProgressHUD *)alertWithTitle:(NSString *)title message:(NSString *)message;
+
++ (MBProgressHUD *)alertWithTitle:(NSString *)title message:(NSString *)message inView:(UIView *)view;
+
++ (MBProgressHUD *)showHud;
 
 + (void)hideHud;
 
-+ (void)showHudInView:(UIView *)view;
++ (MBProgressHUD *)showHudInView:(UIView *)view;
 
 + (void)hideHudInView:(UIView *)view;
 
-+ (void)showHud:(NSString *)title inView:(UIView *)view;
++ (MBProgressHUD *)showHud:(NSString *)title inView:(UIView *)view;
 
 @end

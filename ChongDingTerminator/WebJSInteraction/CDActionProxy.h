@@ -12,15 +12,21 @@
 @protocol CDJsObjectProtocol <JSExport>
 
 JSExportAs(openOrDownloadApk,
-        -(void) openOrDownloadApk:(id)pkgStr downloadUrl:(id)url
+        -(void) openOrDownloadApk:(id)jsonStr
 );
 
-JSExportAs(openOrDownloadApk,
-        -(void) shareApp:(id)qrImageUrl
+JSExportAs(shareApp,
+        -(void) shareApp:(id)jsonStr
 );
 
 @end
 
+@protocol CDActionDelegate
+- (void)shareSuccess;
+@end
+
 @interface CDActionProxy : NSObject <CDJsObjectProtocol>
+
+@property(nonatomic, weak) id<CDActionDelegate> delegate;
 
 @end

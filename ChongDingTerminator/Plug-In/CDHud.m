@@ -8,7 +8,7 @@
 
 #import "CDHud.h"
 #import <UIKit/UIWindow.h>
-#import "MBProgressHUD.h"
+
 
 @implementation CDHud
 
@@ -27,15 +27,38 @@
     return window;
 } /* topWindow */
 
-+ (void)showHud {
-    [self showHud:nil inView:[self topWindow]];
++ (MBProgressHUD *)alertWithTitle:(NSString *)title message:(NSString *)message {
+    return [self alertWithTitle:title message:message inView:[self topWindow]];
 }
 
-+ (void)showHudInView:(UIView *)view {
-    [self showHud:nil inView:view];
++ (MBProgressHUD *)alertWithTitle:(NSString *)title message:(NSString *)message inView:(UIView *)view {
+    [CDHud hideHudInView:view];
+
+    MBProgressHUD *hud = [CDHud showHudInView:view];
+
+    hud.mode = MBProgressHUDModeText;
+    hud.graceTime = 0.1;
+    hud.animationType = MBProgressHUDAnimationZoomOut;
+    hud.userInteractionEnabled = NO;
+    hud.label.text = title;
+    hud.detailsLabel.text = message;
+    [hud hideAnimated:YES afterDelay:3];
+    return hud;
+} /* alertWithTitle */
+
++ (MBProgressHUD *)alertWithMessage:(NSString *)message {
+    return [self alertWithTitle:nil message:message];
 }
 
-+ (void)showHud:(NSString *)title inView:(UIView *)view {
++ (MBProgressHUD *)showHud {
+    return [self showHud:nil inView:[self topWindow]];
+}
+
++ (MBProgressHUD *)showHudInView:(UIView *)view {
+    return [self showHud:nil inView:view];
+}
+
++ (MBProgressHUD *)showHud:(NSString *)title inView:(UIView *)view {
     MBProgressHUD *hud = [MBProgressHUD HUDForView:view];
 
     BOOL hasHUD = (hud != nil);
@@ -45,6 +68,7 @@
 
     hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.label.text = NSLocalizedString(title, @"HUD loading title");
+    return hud;
 }
 
 + (void)hideHud {
