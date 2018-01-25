@@ -31,6 +31,7 @@
 @property(nonatomic, strong) JSContext *context;
 @property(nonatomic, strong) NSURL *originUrl;
 @property(nonatomic, assign) BOOL bLoadSuccess;
+@property(nonatomic, assign) BOOL bRedirect;
 
 @end
 
@@ -55,18 +56,19 @@
         self.scrollView.emptyDataSetSource = self;
         self.scrollView.emptyDataSetDelegate = self;
         self.bLoadSuccess = YES;
+        self.bRedirect = NO;
         if (ADD_REFREFRESH) {
-            self.scrollView.bounces = YES;
-            MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
-                                                                             refreshingAction:@selector(headerRefresh)];
-            header.lastUpdatedTimeLabel.hidden = YES;
-            [header setTitle:@"下拉刷新" forState:MJRefreshStateWillRefresh];
-            [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
-            [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
-            [header setTitle:@"玩命加载中..." forState:MJRefreshStateRefreshing];
-            self.scrollView.mj_header = header;
-            //        self.scrollView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
-            //                                                                         refreshingAction:@selector(footerRefresh)];
+//            self.scrollView.bounces = YES;
+//            MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
+//                                                                             refreshingAction:@selector(headerRefresh)];
+//            header.lastUpdatedTimeLabel.hidden = YES;
+//            [header setTitle:@"下拉刷新" forState:MJRefreshStateWillRefresh];
+//            [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+//            [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
+//            [header setTitle:@"玩命加载中..." forState:MJRefreshStateRefreshing];
+//            self.scrollView.mj_header = header;
+//            self.scrollView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
+//                                                                         refreshingAction:@selector(footerRefresh)];
         }
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(networkChanged:)
@@ -78,7 +80,6 @@
 
 - (void)loadURL:(NSString *)url {
     self.originUrl = [NSURL URLWithString:url];
-    self.back.hidden = YES;
     [self loadData];
 }
 
@@ -88,6 +89,8 @@
 
 - (IBAction)backToMain:(id)sender {
     [self goBack];
+    self.bRedirect = NO;
+    self.back.hidden = YES;
     //    [self loadData];
 }
 
@@ -118,7 +121,10 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     NSLog(@"%@, navigationType: %ld", request.description, (long)navigationType);
     if ([request.URL.absoluteString containsString:@"account.xiaomi.com"]) {
-        self.back.hidden = NO;
+        if (!self.bRedirect) {
+            [self loadRequest:request];
+            self.bRedirect = YES;
+        }
     }
     
     if ([request.URL.absoluteString isEqualToString:@"about:blank"]) {
@@ -145,12 +151,17 @@
     }
     self.bLoadSuccess = YES;
     [self endRefresh];
+    if ([self.request.URL.absoluteString containsString:@"account.xiaomi.com"]) {
+        self.back.hidden = NO;
+    } else {
+        self.back.hidden = YES;
+    }
     NSLog(@"canGoBack %@，canForward %@", @([self canGoBack]), @([self canGoForward]));
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     NSLog(@"didFailLoadWithError");
-    self.bLoadSuccess = NO;
+    self.bLoadSuccess = NO || self.bRedirect;
     [self endRefresh];
 }
 

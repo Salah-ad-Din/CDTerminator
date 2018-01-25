@@ -14,6 +14,9 @@
 
 - (void)openOrDownloadApk:(id)jsonStr {
     NSLog(@"openOrDownloadApk : %@", jsonStr);
+    if (!jsonStr) {
+        return;
+    }
     OpenDownloadModel *model = [OpenDownloadModel yy_modelWithJSON:jsonStr];
     NSURL *scheme = [NSURL URLWithString:model.scheme];
 
@@ -26,6 +29,9 @@
 
 - (void)shareApp:(id)jsonStr {
     NSLog(@"shareApp : share。。。。。。。。。");
+    if (!jsonStr) {
+        return;
+    }
     ShareModel *model = [ShareModel yy_modelWithJSON:jsonStr];
 
     if ([self.delegate respondsToSelector:@selector(share)]) {
