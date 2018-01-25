@@ -10,7 +10,7 @@
 
 #define ADD_REFREFRESH NO
 #define MAIN_PAGE @"http://test.web.vip.miui.com/page/answer"
-
+#define LOCAL_STORAGE_KEY @""
 // 西瓜视频
 extern NSString* const SCHEME_XIGUA;
 

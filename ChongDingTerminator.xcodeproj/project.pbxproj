@@ -83,6 +83,22 @@
 		95A13AE02018694E001EC52F /* EXTSafeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13AD02018694E001EC52F /* EXTSafeCategory.m */; };
 		95A13AE12018694E001EC52F /* NSMethodSignature+EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13AD22018694E001EC52F /* NSMethodSignature+EXT.m */; };
 		95A13AE22018694E001EC52F /* EXTNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13AD62018694E001EC52F /* EXTNil.m */; };
+		95A13AE620196C9C001EC52F /* UIWebView+KeyValueStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13AE520196C9B001EC52F /* UIWebView+KeyValueStorage.m */; };
+		95A13AEA2019DECA001EC52F /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13AE82019DEC9001EC52F /* UIScrollView+EmptyDataSet.m */; };
+		95A13B0A2019F133001EC52F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 95A13AF02019F133001EC52F /* README.md */; };
+		95A13B0B2019F133001EC52F /* PingFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13AF12019F133001EC52F /* PingFoundation.m */; };
+		95A13B0C2019F133001EC52F /* PingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13AF22019F133001EC52F /* PingHelper.m */; };
+		95A13B0D2019F133001EC52F /* LocalConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13AF52019F133001EC52F /* LocalConnection.m */; };
+		95A13B0E2019F133001EC52F /* ReachState.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13AFE2019F133001EC52F /* ReachState.m */; };
+		95A13B0F2019F133001EC52F /* ReachStateUnloaded.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13B002019F133001EC52F /* ReachStateUnloaded.m */; };
+		95A13B102019F133001EC52F /* ReachStateUnReachable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13B012019F133001EC52F /* ReachStateUnReachable.m */; };
+		95A13B112019F133001EC52F /* ReachStateWWAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13B022019F133001EC52F /* ReachStateWWAN.m */; };
+		95A13B122019F133001EC52F /* ReachStateLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13B042019F133001EC52F /* ReachStateLoading.m */; };
+		95A13B132019F133001EC52F /* FSMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13B052019F133001EC52F /* FSMEngine.m */; };
+		95A13B142019F133001EC52F /* FSMStateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13B062019F133001EC52F /* FSMStateUtil.m */; };
+		95A13B152019F133001EC52F /* ReachStateWIFI.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13B072019F133001EC52F /* ReachStateWIFI.m */; };
+		95A13B162019F133001EC52F /* RealReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A13B082019F133001EC52F /* RealReachability.m */; };
+		95A13B172019F133001EC52F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A13B092019F133001EC52F /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -226,6 +242,37 @@
 		95A13AD62018694E001EC52F /* EXTNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTNil.m; sourceTree = "<group>"; };
 		95A13AD72018694E001EC52F /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTKeyPathCoding.h; sourceTree = "<group>"; };
 		95A13AD82018694E001EC52F /* EXTCoroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTCoroutine.h; sourceTree = "<group>"; };
+		95A13AE420196C9B001EC52F /* UIWebView+KeyValueStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+KeyValueStorage.h"; sourceTree = "<group>"; };
+		95A13AE520196C9B001EC52F /* UIWebView+KeyValueStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+KeyValueStorage.m"; sourceTree = "<group>"; };
+		95A13AE82019DEC9001EC52F /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		95A13AE92019DEC9001EC52F /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		95A13AEC2019F133001EC52F /* RealReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealReachability.h; sourceTree = "<group>"; };
+		95A13AEE2019F133001EC52F /* PingFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingFoundation.h; sourceTree = "<group>"; };
+		95A13AEF2019F133001EC52F /* PingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingHelper.h; sourceTree = "<group>"; };
+		95A13AF02019F133001EC52F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		95A13AF12019F133001EC52F /* PingFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingFoundation.m; sourceTree = "<group>"; };
+		95A13AF22019F133001EC52F /* PingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingHelper.m; sourceTree = "<group>"; };
+		95A13AF42019F133001EC52F /* LocalConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalConnection.h; sourceTree = "<group>"; };
+		95A13AF52019F133001EC52F /* LocalConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalConnection.m; sourceTree = "<group>"; };
+		95A13AF72019F133001EC52F /* FSMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMDefines.h; sourceTree = "<group>"; };
+		95A13AF82019F133001EC52F /* ReachStateUnReachable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachStateUnReachable.h; sourceTree = "<group>"; };
+		95A13AF92019F133001EC52F /* ReachStateWWAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachStateWWAN.h; sourceTree = "<group>"; };
+		95A13AFA2019F133001EC52F /* ReachStateUnloaded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachStateUnloaded.h; sourceTree = "<group>"; };
+		95A13AFB2019F133001EC52F /* FSMStateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMStateUtil.h; sourceTree = "<group>"; };
+		95A13AFC2019F133001EC52F /* FSMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMEngine.h; sourceTree = "<group>"; };
+		95A13AFD2019F133001EC52F /* ReachStateLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachStateLoading.h; sourceTree = "<group>"; };
+		95A13AFE2019F133001EC52F /* ReachState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachState.m; sourceTree = "<group>"; };
+		95A13AFF2019F133001EC52F /* ReachStateWIFI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachStateWIFI.h; sourceTree = "<group>"; };
+		95A13B002019F133001EC52F /* ReachStateUnloaded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachStateUnloaded.m; sourceTree = "<group>"; };
+		95A13B012019F133001EC52F /* ReachStateUnReachable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachStateUnReachable.m; sourceTree = "<group>"; };
+		95A13B022019F133001EC52F /* ReachStateWWAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachStateWWAN.m; sourceTree = "<group>"; };
+		95A13B032019F133001EC52F /* ReachState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachState.h; sourceTree = "<group>"; };
+		95A13B042019F133001EC52F /* ReachStateLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachStateLoading.m; sourceTree = "<group>"; };
+		95A13B052019F133001EC52F /* FSMEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMEngine.m; sourceTree = "<group>"; };
+		95A13B062019F133001EC52F /* FSMStateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMStateUtil.m; sourceTree = "<group>"; };
+		95A13B072019F133001EC52F /* ReachStateWIFI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachStateWIFI.m; sourceTree = "<group>"; };
+		95A13B082019F133001EC52F /* RealReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealReachability.m; sourceTree = "<group>"; };
+		95A13B092019F133001EC52F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +325,9 @@
 		91846303200E37E300ABB2B3 /* Plug-In */ = {
 			isa = PBXGroup;
 			children = (
+				95A13AEB2019F133001EC52F /* RealReachability */,
+				95A13AE72019DEC9001EC52F /* UIScrollView+EmptyDataSet */,
+				95A13AE320196C9B001EC52F /* UIWebView-WebStorage */,
 				95A13ABF2018694E001EC52F /* extobjc */,
 				95A13AB4201834F2001EC52F /* YYModel */,
 				95873D09200EE103001A7489 /* MBProgreeHUD */,
@@ -662,6 +712,82 @@
 			path = extobjc;
 			sourceTree = "<group>";
 		};
+		95A13AE320196C9B001EC52F /* UIWebView-WebStorage */ = {
+			isa = PBXGroup;
+			children = (
+				95A13AE420196C9B001EC52F /* UIWebView+KeyValueStorage.h */,
+				95A13AE520196C9B001EC52F /* UIWebView+KeyValueStorage.m */,
+			);
+			path = "UIWebView-WebStorage";
+			sourceTree = "<group>";
+		};
+		95A13AE72019DEC9001EC52F /* UIScrollView+EmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				95A13AE82019DEC9001EC52F /* UIScrollView+EmptyDataSet.m */,
+				95A13AE92019DEC9001EC52F /* UIScrollView+EmptyDataSet.h */,
+			);
+			path = "UIScrollView+EmptyDataSet";
+			sourceTree = "<group>";
+		};
+		95A13AEB2019F133001EC52F /* RealReachability */ = {
+			isa = PBXGroup;
+			children = (
+				95A13AEC2019F133001EC52F /* RealReachability.h */,
+				95A13AED2019F133001EC52F /* Ping */,
+				95A13AF32019F133001EC52F /* Connection */,
+				95A13AF62019F133001EC52F /* FSM */,
+				95A13B082019F133001EC52F /* RealReachability.m */,
+				95A13B092019F133001EC52F /* Info.plist */,
+			);
+			path = RealReachability;
+			sourceTree = "<group>";
+		};
+		95A13AED2019F133001EC52F /* Ping */ = {
+			isa = PBXGroup;
+			children = (
+				95A13AEE2019F133001EC52F /* PingFoundation.h */,
+				95A13AEF2019F133001EC52F /* PingHelper.h */,
+				95A13AF02019F133001EC52F /* README.md */,
+				95A13AF12019F133001EC52F /* PingFoundation.m */,
+				95A13AF22019F133001EC52F /* PingHelper.m */,
+			);
+			path = Ping;
+			sourceTree = "<group>";
+		};
+		95A13AF32019F133001EC52F /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				95A13AF42019F133001EC52F /* LocalConnection.h */,
+				95A13AF52019F133001EC52F /* LocalConnection.m */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		95A13AF62019F133001EC52F /* FSM */ = {
+			isa = PBXGroup;
+			children = (
+				95A13AF72019F133001EC52F /* FSMDefines.h */,
+				95A13AF82019F133001EC52F /* ReachStateUnReachable.h */,
+				95A13AF92019F133001EC52F /* ReachStateWWAN.h */,
+				95A13AFA2019F133001EC52F /* ReachStateUnloaded.h */,
+				95A13AFB2019F133001EC52F /* FSMStateUtil.h */,
+				95A13AFC2019F133001EC52F /* FSMEngine.h */,
+				95A13AFD2019F133001EC52F /* ReachStateLoading.h */,
+				95A13AFE2019F133001EC52F /* ReachState.m */,
+				95A13AFF2019F133001EC52F /* ReachStateWIFI.h */,
+				95A13B002019F133001EC52F /* ReachStateUnloaded.m */,
+				95A13B012019F133001EC52F /* ReachStateUnReachable.m */,
+				95A13B022019F133001EC52F /* ReachStateWWAN.m */,
+				95A13B032019F133001EC52F /* ReachState.h */,
+				95A13B042019F133001EC52F /* ReachStateLoading.m */,
+				95A13B052019F133001EC52F /* FSMEngine.m */,
+				95A13B062019F133001EC52F /* FSMStateUtil.m */,
+				95A13B072019F133001EC52F /* ReachStateWIFI.m */,
+			);
+			path = FSM;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -727,11 +853,13 @@
 				91846330200E37E300ABB2B3 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				951856502009C1C600826D35 /* generate_constants.py in Resources */,
 				91846336200E37E300ABB2B3 /* README.txt in Resources */,
+				95A13B0A2019F133001EC52F /* README.md in Resources */,
 				91846333200E37E300ABB2B3 /* WeiboSDK.bundle in Resources */,
 				91846339200E37E300ABB2B3 /* UMSocialSDKPromptResources.bundle in Resources */,
 				95873CF7200EDC4A001A7489 /* MJRefresh.bundle in Resources */,
 				95A13ADC2018694E001EC52F /* README.md in Resources */,
 				9184633A200E37E300ABB2B3 /* UMSocialSDKResources.bundle in Resources */,
+				95A13B172019F133001EC52F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,7 +889,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A13B162019F133001EC52F /* RealReachability.m in Sources */,
+				95A13B112019F133001EC52F /* ReachStateWWAN.m in Sources */,
 				95A13ADB2018694E001EC52F /* EXTScope.m in Sources */,
+				95A13AE620196C9C001EC52F /* UIWebView+KeyValueStorage.m in Sources */,
 				95A13ADD2018694E001EC52F /* EXTRuntimeExtensions.m in Sources */,
 				95873CF8200EDC4A001A7489 /* UIScrollView+MJExtension.m in Sources */,
 				95873D00200EDC4A001A7489 /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -779,14 +910,20 @@
 				95A13AD92018694E001EC52F /* EXTSelectorChecking.m in Sources */,
 				95873CFF200EDC4A001A7489 /* MJRefreshAutoGifFooter.m in Sources */,
 				9518563220079AA600826D35 /* AppDelegate.m in Sources */,
+				95A13B0B2019F133001EC52F /* PingFoundation.m in Sources */,
 				9518564E2009BCA500826D35 /* ShareViewController.m in Sources */,
+				95A13B0C2019F133001EC52F /* PingHelper.m in Sources */,
 				95873CFD200EDC4A001A7489 /* MJRefreshBackNormalFooter.m in Sources */,
+				95A13B152019F133001EC52F /* ReachStateWIFI.m in Sources */,
+				95A13B132019F133001EC52F /* FSMEngine.m in Sources */,
 				95A13ADA2018694E001EC52F /* EXTConcreteProtocol.m in Sources */,
 				9545BA22200C9CCB00012535 /* StoryboardConstants.m in Sources */,
 				95873D02200EDC4A001A7489 /* MJRefreshStateHeader.m in Sources */,
 				95A13ABB201834F2001EC52F /* YYClassInfo.m in Sources */,
 				95A13ADE2018694E001EC52F /* EXTADT.m in Sources */,
+				95A13B142019F133001EC52F /* FSMStateUtil.m in Sources */,
 				95873CFE200EDC4A001A7489 /* MJRefreshAutoStateFooter.m in Sources */,
+				95A13B122019F133001EC52F /* ReachStateLoading.m in Sources */,
 				95873D06200EDC4A001A7489 /* MJRefreshBackFooter.m in Sources */,
 				9518564320079AA600826D35 /* main.m in Sources */,
 				9518563520079AA600826D35 /* AssistantViewController.m in Sources */,
@@ -796,15 +933,20 @@
 				95873D12200EE46E001A7489 /* CDHud.m in Sources */,
 				95873D04200EDC4A001A7489 /* MJRefreshFooter.m in Sources */,
 				9545BA2A200CA07500012535 /* CDWebView.m in Sources */,
+				95A13B0F2019F133001EC52F /* ReachStateUnloaded.m in Sources */,
+				95A13AEA2019DECA001EC52F /* UIScrollView+EmptyDataSet.m in Sources */,
 				95873CF6200EDC4A001A7489 /* MJRefreshConst.m in Sources */,
 				95873D05200EDC4A001A7489 /* MJRefreshHeader.m in Sources */,
 				95873CFC200EDC4A001A7489 /* MJRefreshBackStateFooter.m in Sources */,
 				95873D16200F0633001A7489 /* LocalNotificationManager.m in Sources */,
+				95A13B102019F133001EC52F /* ReachStateUnReachable.m in Sources */,
 				95873CF5200EDC4A001A7489 /* UIScrollView+MJRefresh.m in Sources */,
 				95873CFB200EDC4A001A7489 /* MJRefreshBackGifFooter.m in Sources */,
+				95A13B0D2019F133001EC52F /* LocalConnection.m in Sources */,
 				95A13ABA201834F2001EC52F /* NSObject+YYModel.m in Sources */,
 				95873D07200EDC4A001A7489 /* MJRefreshAutoFooter.m in Sources */,
 				9545BA25200C9F3900012535 /* CommunicateViewController.m in Sources */,
+				95A13B0E2019F133001EC52F /* ReachState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

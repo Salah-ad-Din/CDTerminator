@@ -10,6 +10,7 @@
 #import <UMCommon/UMCommon.h>           // 公共组件是所有友盟产品的基础组件，必选
 #import <UMAnalytics/MobClick.h>        // 统计组件
 #import <UMShare/UMShare.h>             // 分享组件
+#import "RealReachability.h"
 
 #define UMENG_APPKEY @"5a655ed08f4a9d332b0000ef"
 
@@ -24,7 +25,7 @@
     // Override point for customization after application launch.
 
     [self configUMeng];
-
+    [GLobalRealReachability startNotifier];
 
     return YES;
 }
@@ -67,7 +68,7 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    
+
 }
 
 - (void)configUMeng {

@@ -190,11 +190,23 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig7-3U-KF6" customClass="CDWebView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="back" destination="bgN-IV-Izu" id="Gih-VQ-Sbw"/>
+                                </connections>
                             </webView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgN-IV-Izu">
+                                <rect key="frame" x="334" y="30" width="31" height="30"/>
+                                <state key="normal" title="关闭"/>
+                                <connections>
+                                    <action selector="backToMain:" destination="Ig7-3U-KF6" eventType="touchUpInside" id="cvt-x0-fAX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vAl-fk-ahh" firstAttribute="trailing" secondItem="bgN-IV-Izu" secondAttribute="trailing" constant="10" id="7e9-zD-blV"/>
                             <constraint firstItem="Ig7-3U-KF6" firstAttribute="trailing" secondItem="vAl-fk-ahh" secondAttribute="trailing" id="Ba9-nB-hen"/>
+                            <constraint firstItem="bgN-IV-Izu" firstAttribute="top" secondItem="vAl-fk-ahh" secondAttribute="top" constant="10" id="CF4-CK-8oF"/>
                             <constraint firstItem="Ig7-3U-KF6" firstAttribute="leading" secondItem="vAl-fk-ahh" secondAttribute="leading" id="ClF-j7-GYf"/>
                             <constraint firstItem="Ig7-3U-KF6" firstAttribute="bottom" secondItem="vAl-fk-ahh" secondAttribute="bottom" id="Iob-zD-F5X"/>
                             <constraint firstItem="Ig7-3U-KF6" firstAttribute="top" secondItem="8iL-UF-z5N" secondAttribute="top" id="Wyq-N5-2hk"/>

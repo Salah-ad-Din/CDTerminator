@@ -21,6 +21,7 @@
 @property(nonatomic, weak) id <CDWebViewDelegate> cdDelegate;
 
 - (void)loadURL:(NSString *)url;
+
 - (void)shareSuccess;
 
 @end
