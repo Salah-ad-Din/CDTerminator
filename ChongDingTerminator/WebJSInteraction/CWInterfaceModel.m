@@ -15,3 +15,7 @@
 @implementation ShareModel
 
 @end
+
+@implementation LocalNotificationModel
+
+@end

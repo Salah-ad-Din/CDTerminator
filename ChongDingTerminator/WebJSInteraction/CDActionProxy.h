@@ -19,6 +19,10 @@ JSExportAs(shareApp,
         -(void) shareApp:(id)jsonStr
 );
 
+JSExportAs(sendSysNotification,
+           -(void) sendSysNotification:(id)jsonStr
+           );
+
 @end
 
 @protocol CDActionDelegate <NSObject>

@@ -10,7 +10,7 @@
 
 @interface LocalNotificationManager : NSObject
 
-+ (void)addLocalNotification:(NSDate*)date;
++ (NSString*)addLocalNotification:(id)model;
 
 + (void)cancelLocalNotification:(NSString *)notificationIdentifier;
 

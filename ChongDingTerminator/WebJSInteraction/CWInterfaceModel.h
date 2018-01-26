@@ -30,3 +30,14 @@
 @property(nonatomic, strong) NSString *yyDownloadUrl;
 
 @end
+
+@interface LocalNotificationModel : NSObject
+
+@property(nonatomic, strong) NSString *title;
+@property(nonatomic, strong) NSString *msg;
+@property(nonatomic, strong) NSString *icon;
+@property(nonatomic, strong) NSString *ticker;
+@property(nonatomic, strong) NSString *delay;
+
+@end
+

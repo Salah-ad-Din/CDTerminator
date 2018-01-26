@@ -162,6 +162,7 @@
 		9545BA2B200CA0D000012535 /* CDActionProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDActionProxy.h; sourceTree = "<group>"; };
 		9545BA2C200CA0D000012535 /* CDActionProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDActionProxy.m; sourceTree = "<group>"; };
 		9545BA2F200CAC2F00012535 /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
+		9576F574201B061F005ACEF5 /* ChongDingTerminator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChongDingTerminator.entitlements; sourceTree = "<group>"; };
 		95873CC7200EDC4A001A7489 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		95873CC8200EDC4A001A7489 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
 		95873CC9200EDC4A001A7489 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
@@ -506,6 +507,7 @@
 		9518562F20079AA600826D35 /* ChongDingTerminator */ = {
 			isa = PBXGroup;
 			children = (
+				9576F574201B061F005ACEF5 /* ChongDingTerminator.entitlements */,
 				95873D13200F060C001A7489 /* Utils */,
 				9545BA27200CA01E00012535 /* WebJSInteraction */,
 				9545BA26200C9FEB00012535 /* MainController */,
@@ -821,6 +823,11 @@
 					9518562C20079AA600826D35 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1081,6 +1088,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = ChongDingTerminator/ChongDingTerminator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32WY97S5K2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1118,6 +1126,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = ChongDingTerminator/ChongDingTerminator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32WY97S5K2;
 				FRAMEWORK_SEARCH_PATHS = (

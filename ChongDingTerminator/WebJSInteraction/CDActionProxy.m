@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CDActionProxy.h"
 #import "CWInterfaceModel.h"
+#import "LocalNotificationManager.h"
 
 @implementation CDActionProxy
 
@@ -28,7 +29,7 @@
 }
 
 - (void)shareApp:(id)jsonStr {
-    NSLog(@"shareApp : share。。。。。。。。。");
+    NSLog(@"shareApp : %@", jsonStr);
     if (!jsonStr) {
         return;
     }
@@ -37,6 +38,15 @@
     if ([self.delegate respondsToSelector:@selector(share)]) {
             [self.delegate share:model];
     }
+}
+
+- (void)sendSysNotification:(id)jsonStr {
+    NSLog(@"sendSysNotification : %@", jsonStr);
+    if (!jsonStr) {
+        return;
+    }
+    LocalNotificationModel *model = [LocalNotificationModel yy_modelWithJSON:jsonStr];
+    [LocalNotificationManager addLocalNotification:model];
 }
 
 @end

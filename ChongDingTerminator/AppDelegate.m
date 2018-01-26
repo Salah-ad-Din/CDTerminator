@@ -11,6 +11,7 @@
 #import <UMAnalytics/MobClick.h>        // 统计组件
 #import <UMShare/UMShare.h>             // 分享组件
 #import "RealReachability.h"
+#import <UserNotifications/UserNotifications.h>
 
 #define UMENG_APPKEY @"5a655ed08f4a9d332b0000ef"
 
@@ -26,6 +27,21 @@
 
     [self configUMeng];
     [GLobalRealReachability startNotifier];
+    
+    // 注册通知
+    if (@available(iOS 10.0, *)) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            
+        }];
+    } else {
+        // 注册通知，如果已经获得发送通知的授权则创建本地通知，否则请求授权(注意：如果不请求授权在设置中是没有对应的通知设置项的，也就是说如果从来没有发送过请求，即使通过设置也打不开消息允许设置)
+        if ([[UIApplication sharedApplication] currentUserNotificationSettings].types != UIUserNotificationTypeNone) {
+            
+        } else {
+            [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound  categories:nil]];
+        }
+    }
 
     return YES;
 }

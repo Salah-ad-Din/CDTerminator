@@ -9,18 +9,25 @@
 #import "LocalNotificationManager.h"
 #import <UserNotifications/UserNotifications.h>
 #import <UIKit/UIKit.h>
+#include "CWInterfaceModel.h"
 
 @implementation LocalNotificationManager
 
 static NSString *kLocalNotificationIdentifier = @"LocalNotificationIdentifier";
 
-+ (void)addLocalNotification:(NSDate*)date {
++ (NSString*)addLocalNotification:(id)model {
     // 先取消已存在的推送
     [self cancelLocalNotification:kLocalNotificationIdentifier];
+    
+    if (![model isKindOfClass:[LocalNotificationModel class]]) {
+        return nil;
+    }
+    LocalNotificationModel* data = (LocalNotificationModel*)model;
 
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
                         | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSDate* date = [NSDate dateWithTimeIntervalSinceNow:[data.delay doubleValue] / 1000];
     NSDateComponents *components = [calendar components:unitFlags fromDate:date];
 
     //添加推送
@@ -30,9 +37,9 @@ static NSString *kLocalNotificationIdentifier = @"LocalNotificationIdentifier";
             if (settings.authorizationStatus == UNAuthorizationStatusAuthorized) {
                 UNMutableNotificationContent *content = [UNMutableNotificationContent new];
                 content.badge = @1;
-                content.body = @"GO GO GO...";
+                content.body = data.msg;
                 content.sound = [UNNotificationSound defaultSound];
-                content.title = @"赢钱马上开始";
+                content.title = data.title;
                 UNCalendarNotificationTrigger *trigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:components repeats:NO];
                 UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:kLocalNotificationIdentifier content:content trigger:trigger];
                 [center addNotificationRequest:request withCompletionHandler:^(NSError *_Nullable error) {
@@ -47,7 +54,8 @@ static NSString *kLocalNotificationIdentifier = @"LocalNotificationIdentifier";
             UILocalNotification *notification = [[UILocalNotification alloc] init];
             notification.fireDate = [calendar dateFromComponents:components];
             notification.repeatInterval = 0;
-            notification.alertBody = @"赢钱马上开始";
+            notification.alertBody = data.msg;
+            notification.alertTitle = data.title;
             notification.applicationIconBadgeNumber = 1;
             notification.soundName = UILocalNotificationDefaultSoundName;
             notification.userInfo = @{@"notificationIdentifier": kLocalNotificationIdentifier};
@@ -56,6 +64,7 @@ static NSString *kLocalNotificationIdentifier = @"LocalNotificationIdentifier";
 
         }
     }
+    return kLocalNotificationIdentifier;
 }
 
 + (void)cancelLocalNotification:(NSString *)notificationIdentifier {
