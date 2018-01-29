@@ -68,9 +68,10 @@
                                         currentViewController:self
                                                    completion:^(id result, NSError *error) {
                                                        @strongify(self);
-                                                       NSLog(@"%@", error);
                                                        if (!error) {
                                                            [self.webView shareSuccess];
+                                                       } else {
+                                                           NSLog(@"%@", error);
                                                        }
                                                    }];
         }];
@@ -87,6 +88,7 @@
     UMShareWebpageObject *object = [UMShareWebpageObject shareObjectWithTitle:model.title
                                                                         descr:model.descript
                                                                     thumImage:model.shareImgUrl];
+    object.webpageUrl = model.directUrl;
     return object;
 }
 

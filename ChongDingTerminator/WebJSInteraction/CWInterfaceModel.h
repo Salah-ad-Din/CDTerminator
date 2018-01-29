@@ -26,8 +26,7 @@
 @property(nonatomic, strong) NSString *shareType;
 @property(nonatomic, strong) NSString *descript;
 @property(nonatomic, strong) NSString *shareImgUrl;
-@property(nonatomic, strong) NSString *yyNum;
-@property(nonatomic, strong) NSString *yyDownloadUrl;
+@property(nonatomic, strong) NSString *directUrl;
 
 @end
 
