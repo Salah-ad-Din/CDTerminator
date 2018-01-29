@@ -21,6 +21,10 @@
     OpenDownloadModel *model = [OpenDownloadModel yy_modelWithJSON:jsonStr];
     NSURL *scheme = [NSURL URLWithString:model.scheme];
 
+    if (!scheme) {
+        return;
+    }
+    
     if ([[UIApplication sharedApplication] canOpenURL:scheme]) {
         [[UIApplication sharedApplication] openURL:scheme];
     } else {
@@ -30,13 +34,38 @@
 
 - (void)shareApp:(id)jsonStr {
     NSLog(@"shareApp : %@", jsonStr);
+    jsonStr = @"{\n"
+ " \"title\": \"test title\",\n"
+ " \"shareType\": \"1\",\n"
+ " \"descript\": \"nothing is improtent\",\n"
+ " \"shareImgUrl\": \"https://i.don't.know\",\n"
+ " \"directUrl\": \"http://x.v.xiaomi.com/test\",\n"
+ " \"extInfo\": {\n"
+ "  \"name\": \"YY\",\n"
+ "  \"group\": \"152634\",\n"
+ "  \"androidApp\": [{\n"
+ "   \"packageName\": \"com.xiaomi.test\",\n"
+ "   \"scheme\": \"http://\",\n"
+ "   \"downloadUrl\": \"http://downloan.xiaomi.com\",\n"
+ "   \"appUrl\": \"https://x.v.xiaomi.com\",\n"
+ "   \"appName\": \"冲顶大会\"\n"
+ "  }],\n"
+ "  \"appleApp\": [{\n"
+ "   \"packageName\": \"com.xiaomi.test\",\n"
+ "   \"scheme\": \"http://\",\n"
+ "   \"downloadUrl\": \"http://downloan.xiaomi.com\",\n"
+ "   \"appUrl\": \"https://x.v.xiaomi.com\",\n"
+ "   \"appName\": \"冲顶大会\"\n"
+ "  }]\n"
+ " }\n"
+ "}";
     if (!jsonStr) {
         return;
     }
     ShareModel *model = [ShareModel yy_modelWithJSON:jsonStr];
 
-    if ([self.delegate respondsToSelector:@selector(share)]) {
-            [self.delegate share:model];
+    if ([self.delegate respondsToSelector:@selector(share:)]) {
+        [self.delegate share:model];
     }
 }
 

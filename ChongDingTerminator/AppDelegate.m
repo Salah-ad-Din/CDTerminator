@@ -15,6 +15,9 @@
 
 #define UMENG_APPKEY @"5a655ed08f4a9d332b0000ef"
 
+#define SINA_APPKEY @"3816135399"
+#define SINA_APPSECRET @"f83b2fcb80aabd10c4f490b9a98492d9"
+
 @interface AppDelegate ()
 
 @end
