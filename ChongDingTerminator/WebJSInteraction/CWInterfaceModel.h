@@ -9,13 +9,25 @@
 #import <Foundation/Foundation.h>
 #import "NSObject+YYModel.h"
 
-@interface OpenDownloadModel : NSObject
+@interface AppInfo : NSObject
 
-@property(nonatomic, strong) NSString *pkgName;
+@property(nonatomic, strong) NSString *appType;
+@property(nonatomic, strong) NSString *appName;
+@property(nonatomic, strong) NSString *packageName;
 @property(nonatomic, strong) NSString *scheme;
 @property(nonatomic, strong) NSString *downloadUrl;
-@property(nonatomic, strong) NSString *appWebUrl;
+@property(nonatomic, strong) NSString *appUrl;
+
+@end
+
+@interface OpenDownloadModel : NSObject
+
+@property(nonatomic, strong) NSString *appType;
 @property(nonatomic, strong) NSString *appName;
+@property(nonatomic, strong) NSString *packageName;
+@property(nonatomic, strong) NSString *scheme;
+@property(nonatomic, strong) NSString *downloadUrl;
+@property(nonatomic, strong) NSString *appUrl;
 
 @end
 

@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 
+#define MAIN_THREAD(ARGS) if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(dispatch_get_main_queue())) == 0) { ARGS;} else { dispatch_async(dispatch_get_main_queue(), ^{ ARGS; });}
+
 @interface CDHud : NSObject
 
 + (MBProgressHUD *)alertWithTitle:(NSString *)title message:(NSString *)message;

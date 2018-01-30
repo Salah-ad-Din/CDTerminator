@@ -9,7 +9,6 @@
 #import "CDHud.h"
 #import <UIKit/UIWindow.h>
 
-
 @implementation CDHud
 
 + (UIWindow *)topWindow {
@@ -32,17 +31,20 @@
 }
 
 + (MBProgressHUD *)alertWithTitle:(NSString *)title message:(NSString *)message inView:(UIView *)view {
-    [CDHud hideHudInView:view];
-
-    MBProgressHUD *hud = [CDHud showHudInView:view];
-
-    hud.mode = MBProgressHUDModeText;
-    hud.graceTime = 0.1;
-    hud.animationType = MBProgressHUDAnimationZoomOut;
-    hud.userInteractionEnabled = NO;
-    hud.label.text = title;
-    hud.detailsLabel.text = message;
-    [hud hideAnimated:YES afterDelay:3];
+    __block MBProgressHUD *hud = nil;
+    void (^actionBlock) (void) = ^{
+        hud = [CDHud showHudInView:view];
+        
+        hud.mode = MBProgressHUDModeText;
+        hud.graceTime = 0.1;
+        hud.animationType = MBProgressHUDAnimationZoomOut;
+        hud.userInteractionEnabled = NO;
+        hud.label.text = title;
+        hud.detailsLabel.text = message;
+        [hud hideAnimated:YES afterDelay:3];
+    };
+    
+    MAIN_THREAD(actionBlock());
     return hud;
 } /* alertWithTitle */
 
@@ -59,15 +61,18 @@
 }
 
 + (MBProgressHUD *)showHud:(NSString *)title inView:(UIView *)view {
-    MBProgressHUD *hud = [MBProgressHUD HUDForView:view];
+    __block MBProgressHUD *hud = [MBProgressHUD HUDForView:view];
 
     BOOL hasHUD = (hud != nil);
     if (hasHUD) {
         [self hideHudInView:view];
     }
-
-    hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.label.text = NSLocalizedString(title, @"HUD loading title");
+    void (^actionBlock) (void) = ^{
+        hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+        hud.label.text = NSLocalizedString(title, @"HUD loading title");
+    };
+    MAIN_THREAD(actionBlock());
+    
     return hud;
 }
 
@@ -76,10 +81,12 @@
 }
 
 + (void)hideHudInView:(UIView *)view {
-    MBProgressHUD *hud = [MBProgressHUD HUDForView:view];
-    if (hud) {
-        [hud hideAnimated:YES];
-    }
+    MAIN_THREAD({
+        MBProgressHUD *hud = [MBProgressHUD HUDForView:view];
+        if (hud) {
+            [hud hideAnimated:YES];
+        }
+    });
 }
 
 @end

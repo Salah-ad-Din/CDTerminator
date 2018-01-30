@@ -8,6 +8,9 @@
 
 #import "CWInterfaceModel.h"
 
+@implementation AppInfo
+@end
+
 @implementation OpenDownloadModel
 
 @end

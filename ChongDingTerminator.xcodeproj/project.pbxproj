@@ -46,6 +46,10 @@
 		9545BA25200C9F3900012535 /* CommunicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9545BA24200C9F3900012535 /* CommunicateViewController.m */; };
 		9545BA2A200CA07500012535 /* CDWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9545BA29200CA07500012535 /* CDWebView.m */; };
 		9545BA2D200CA0D000012535 /* CDActionProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9545BA2C200CA0D000012535 /* CDActionProxy.m */; };
+		9576F57E20201C7A005ACEF5 /* FCUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9576F57620201C79005ACEF5 /* FCUUID.m */; };
+		9576F57F20201C7A005ACEF5 /* UIDevice+FCUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9576F57720201C79005ACEF5 /* UIDevice+FCUUID.m */; };
+		9576F58020201C7A005ACEF5 /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9576F57B20201C7A005ACEF5 /* UICKeyChainStore.m */; };
+		9576F58120201C7A005ACEF5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9576F57D20201C7A005ACEF5 /* Info.plist */; };
 		95873CF5200EDC4A001A7489 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 95873CC7200EDC4A001A7489 /* UIScrollView+MJRefresh.m */; };
 		95873CF6200EDC4A001A7489 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 95873CC8200EDC4A001A7489 /* MJRefreshConst.m */; };
 		95873CF7200EDC4A001A7489 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95873CCC200EDC4A001A7489 /* MJRefresh.bundle */; };
@@ -163,6 +167,13 @@
 		9545BA2C200CA0D000012535 /* CDActionProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDActionProxy.m; sourceTree = "<group>"; };
 		9545BA2F200CAC2F00012535 /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
 		9576F574201B061F005ACEF5 /* ChongDingTerminator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChongDingTerminator.entitlements; sourceTree = "<group>"; };
+		9576F57620201C79005ACEF5 /* FCUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCUUID.m; sourceTree = "<group>"; };
+		9576F57720201C79005ACEF5 /* UIDevice+FCUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+FCUUID.m"; sourceTree = "<group>"; };
+		9576F57820201C79005ACEF5 /* FCUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCUUID.h; sourceTree = "<group>"; };
+		9576F57920201C79005ACEF5 /* UIDevice+FCUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+FCUUID.h"; sourceTree = "<group>"; };
+		9576F57B20201C7A005ACEF5 /* UICKeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICKeyChainStore.m; sourceTree = "<group>"; };
+		9576F57C20201C7A005ACEF5 /* UICKeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICKeyChainStore.h; sourceTree = "<group>"; };
+		9576F57D20201C7A005ACEF5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95873CC7200EDC4A001A7489 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		95873CC8200EDC4A001A7489 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
 		95873CC9200EDC4A001A7489 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
@@ -326,6 +337,8 @@
 		91846303200E37E300ABB2B3 /* Plug-In */ = {
 			isa = PBXGroup;
 			children = (
+				9576F57520201C79005ACEF5 /* FCUUID */,
+				9576F57A20201C7A005ACEF5 /* UICKeyChainStore */,
 				95A13AEB2019F133001EC52F /* RealReachability */,
 				95A13AE72019DEC9001EC52F /* UIScrollView+EmptyDataSet */,
 				95A13AE320196C9B001EC52F /* UIWebView-WebStorage */,
@@ -555,6 +568,27 @@
 				95A13ABD2018352F001EC52F /* CWInterfaceModel.m */,
 			);
 			path = WebJSInteraction;
+			sourceTree = "<group>";
+		};
+		9576F57520201C79005ACEF5 /* FCUUID */ = {
+			isa = PBXGroup;
+			children = (
+				9576F57620201C79005ACEF5 /* FCUUID.m */,
+				9576F57720201C79005ACEF5 /* UIDevice+FCUUID.m */,
+				9576F57820201C79005ACEF5 /* FCUUID.h */,
+				9576F57920201C79005ACEF5 /* UIDevice+FCUUID.h */,
+			);
+			path = FCUUID;
+			sourceTree = "<group>";
+		};
+		9576F57A20201C7A005ACEF5 /* UICKeyChainStore */ = {
+			isa = PBXGroup;
+			children = (
+				9576F57B20201C7A005ACEF5 /* UICKeyChainStore.m */,
+				9576F57C20201C7A005ACEF5 /* UICKeyChainStore.h */,
+				9576F57D20201C7A005ACEF5 /* Info.plist */,
+			);
+			path = UICKeyChainStore;
 			sourceTree = "<group>";
 		};
 		95873CC6200EDC4A001A7489 /* MJRefresh */ = {
@@ -860,6 +894,7 @@
 				91846330200E37E300ABB2B3 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				951856502009C1C600826D35 /* generate_constants.py in Resources */,
 				91846336200E37E300ABB2B3 /* README.txt in Resources */,
+				9576F58120201C7A005ACEF5 /* Info.plist in Resources */,
 				95A13B0A2019F133001EC52F /* README.md in Resources */,
 				91846333200E37E300ABB2B3 /* WeiboSDK.bundle in Resources */,
 				91846339200E37E300ABB2B3 /* UMSocialSDKPromptResources.bundle in Resources */,
@@ -905,10 +940,12 @@
 				95873D00200EDC4A001A7489 /* MJRefreshAutoNormalFooter.m in Sources */,
 				9518563820079AA600826D35 /* ToolsViewController.m in Sources */,
 				95873D19200F3B18001A7489 /* Constants.m in Sources */,
+				9576F57F20201C7A005ACEF5 /* UIDevice+FCUUID.m in Sources */,
 				95A13AE02018694E001EC52F /* EXTSafeCategory.m in Sources */,
 				95A13AE22018694E001EC52F /* EXTNil.m in Sources */,
 				95873D03200EDC4A001A7489 /* MJRefreshGifHeader.m in Sources */,
 				95873D08200EDC4A001A7489 /* MJRefreshComponent.m in Sources */,
+				9576F57E20201C7A005ACEF5 /* FCUUID.m in Sources */,
 				95873D01200EDC4A001A7489 /* MJRefreshNormalHeader.m in Sources */,
 				95873CF9200EDC4A001A7489 /* NSBundle+MJRefresh.m in Sources */,
 				95A13AE12018694E001EC52F /* NSMethodSignature+EXT.m in Sources */,
@@ -928,6 +965,7 @@
 				95873D02200EDC4A001A7489 /* MJRefreshStateHeader.m in Sources */,
 				95A13ABB201834F2001EC52F /* YYClassInfo.m in Sources */,
 				95A13ADE2018694E001EC52F /* EXTADT.m in Sources */,
+				9576F58020201C7A005ACEF5 /* UICKeyChainStore.m in Sources */,
 				95A13B142019F133001EC52F /* FSMStateUtil.m in Sources */,
 				95873CFE200EDC4A001A7489 /* MJRefreshAutoStateFooter.m in Sources */,
 				95A13B122019F133001EC52F /* ReachStateLoading.m in Sources */,

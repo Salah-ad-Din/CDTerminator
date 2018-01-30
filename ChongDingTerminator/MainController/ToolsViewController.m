@@ -12,6 +12,8 @@
 #import <UShareUI/UShareUI.h>
 #import "CWInterfaceModel.h"
 #import "extobjc.h"
+#import "CDHud.h"
+#import "UIDevice+FCUUID.h"
 
 @interface ToolsViewController () <CDWebViewDelegate>
 @property(weak, nonatomic) IBOutlet CDWebView *webView;
@@ -56,7 +58,7 @@
 
     //显示分享面板
     @weakify(self);
-    dispatch_async(dispatch_get_main_queue(), ^{
+    void (^showShare)(void) = ^{
         [UMSocialUIManager setPreDefinePlatforms:@[@(UMSocialPlatformType_Sina),
                                                    @(UMSocialPlatformType_QQ),
                                                    @(UMSocialPlatformType_WechatSession),
@@ -75,7 +77,8 @@
                                                        }
                                                    }];
         }];
-    });
+    };
+    MAIN_THREAD(showShare());
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -88,7 +91,7 @@
     UMShareWebpageObject *object = [UMShareWebpageObject shareObjectWithTitle:model.title
                                                                         descr:model.descript
                                                                     thumImage:model.shareImgUrl];
-    object.webpageUrl = model.directUrl;
+    object.webpageUrl = [NSString stringWithFormat:@"%@?sharekey=%@", model.directUrl, [[UIDevice currentDevice] uuid]];
     return object;
 }
 

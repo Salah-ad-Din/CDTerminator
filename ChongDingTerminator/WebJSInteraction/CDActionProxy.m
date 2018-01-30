@@ -10,6 +10,7 @@
 #import "CDActionProxy.h"
 #import "CWInterfaceModel.h"
 #import "LocalNotificationManager.h"
+#import "CDHud.h"
 
 @implementation CDActionProxy
 
@@ -18,18 +19,26 @@
     if (!jsonStr) {
         return;
     }
-    OpenDownloadModel *model = [OpenDownloadModel yy_modelWithJSON:jsonStr];
-    NSURL *scheme = [NSURL URLWithString:model.scheme];
-
-    if (!scheme) {
+    NSArray<OpenDownloadModel *> *model = [NSArray yy_modelArrayWithClass:[OpenDownloadModel class] json:jsonStr];
+    if ([model count]  == 0) {
+        [CDHud alertWithTitle:@"参数错误" message:@"打开失败"];
         return;
     }
     
-    if ([[UIApplication sharedApplication] canOpenURL:scheme]) {
-        [[UIApplication sharedApplication] openURL:scheme];
-    } else {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.downloadUrl]];
+    for (AppInfo* a in model) {
+        NSURL *scheme = [NSURL URLWithString:a.scheme];
+        
+        if (!scheme) {
+            return;
+        }
+        
+        if ([[UIApplication sharedApplication] canOpenURL:scheme]) {
+            [[UIApplication sharedApplication] openURL:scheme];
+            return;
+        }
     }
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model[0].appUrl]];
 }
 
 - (void)shareApp:(id)jsonStr {
