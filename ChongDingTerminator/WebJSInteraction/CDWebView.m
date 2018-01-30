@@ -55,6 +55,7 @@
         self.scrollView.bounces = NO;
         self.scrollView.emptyDataSetSource = self;
         self.scrollView.emptyDataSetDelegate = self;
+        self.backgroundColor = UICOLOR_WITH_HEX_RGB(2c107f);
         self.bLoadSuccess = YES;
         self.bRedirect = NO;
         if (ADD_REFREFRESH) {

@@ -32,42 +32,46 @@
             return;
         }
         
-        if ([[UIApplication sharedApplication] canOpenURL:scheme]) {
-            [[UIApplication sharedApplication] openURL:scheme];
-            return;
-        }
+        MAIN_THREAD({
+            if ([[UIApplication sharedApplication] canOpenURL:scheme]) {
+                [[UIApplication sharedApplication] openURL:scheme];
+                return;
+            }
+        });
     }
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model[0].appUrl]];
+    MAIN_THREAD({
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model[0].appUrl]];
+    });
 }
 
 - (void)shareApp:(id)jsonStr {
     NSLog(@"shareApp : %@", jsonStr);
-    jsonStr = @"{\n"
- " \"title\": \"test title\",\n"
- " \"shareType\": \"1\",\n"
- " \"descript\": \"nothing is improtent\",\n"
- " \"shareImgUrl\": \"https://i.don't.know\",\n"
- " \"directUrl\": \"http://x.v.xiaomi.com/test\",\n"
- " \"extInfo\": {\n"
- "  \"name\": \"YY\",\n"
- "  \"group\": \"152634\",\n"
- "  \"androidApp\": [{\n"
- "   \"packageName\": \"com.xiaomi.test\",\n"
- "   \"scheme\": \"http://\",\n"
- "   \"downloadUrl\": \"http://downloan.xiaomi.com\",\n"
- "   \"appUrl\": \"https://x.v.xiaomi.com\",\n"
- "   \"appName\": \"冲顶大会\"\n"
- "  }],\n"
- "  \"appleApp\": [{\n"
- "   \"packageName\": \"com.xiaomi.test\",\n"
- "   \"scheme\": \"http://\",\n"
- "   \"downloadUrl\": \"http://downloan.xiaomi.com\",\n"
- "   \"appUrl\": \"https://x.v.xiaomi.com\",\n"
- "   \"appName\": \"冲顶大会\"\n"
- "  }]\n"
- " }\n"
- "}";
+//    jsonStr = @"{\n"
+// " \"title\": \"test title\",\n"
+// " \"shareType\": \"1\",\n"
+// " \"descript\": \"nothing is improtent\",\n"
+// " \"shareImgUrl\": \"https://i.don't.know\",\n"
+// " \"directUrl\": \"http://x.v.xiaomi.com/test\",\n"
+// " \"extInfo\": {\n"
+// "  \"name\": \"YY\",\n"
+// "  \"group\": \"152634\",\n"
+// "  \"androidApp\": [{\n"
+// "   \"packageName\": \"com.xiaomi.test\",\n"
+// "   \"scheme\": \"http://\",\n"
+// "   \"downloadUrl\": \"http://downloan.xiaomi.com\",\n"
+// "   \"appUrl\": \"https://x.v.xiaomi.com\",\n"
+// "   \"appName\": \"冲顶大会\"\n"
+// "  }],\n"
+// "  \"appleApp\": [{\n"
+// "   \"packageName\": \"com.xiaomi.test\",\n"
+// "   \"scheme\": \"http://\",\n"
+// "   \"downloadUrl\": \"http://downloan.xiaomi.com\",\n"
+// "   \"appUrl\": \"https://x.v.xiaomi.com\",\n"
+// "   \"appName\": \"冲顶大会\"\n"
+// "  }]\n"
+// " }\n"
+// "}";
     if (!jsonStr) {
         return;
     }

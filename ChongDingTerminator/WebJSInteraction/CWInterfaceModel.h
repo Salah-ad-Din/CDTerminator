@@ -39,6 +39,7 @@
 @property(nonatomic, strong) NSString *descript;
 @property(nonatomic, strong) NSString *shareImgUrl;
 @property(nonatomic, strong) NSString *directUrl;
+@property(nonatomic, strong) NSString *iconUrl;
 
 @end
 

@@ -187,13 +187,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig7-3U-KF6" customClass="CDWebView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="back" destination="bgN-IV-Izu" id="Gih-VQ-Sbw"/>
-                                </connections>
-                            </webView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgN-IV-Izu">
                                 <rect key="frame" x="320" y="30" width="40" height="40"/>
                                 <constraints>
@@ -205,15 +198,22 @@
                                     <action selector="backToMain:" destination="Ig7-3U-KF6" eventType="touchUpInside" id="cvt-x0-fAX"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig7-3U-KF6" customClass="CDWebView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="back" destination="bgN-IV-Izu" id="Gih-VQ-Sbw"/>
+                                </connections>
+                            </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.17185655236244202" green="0.065046422183513641" blue="0.49876660108566284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ig7-3U-KF6" firstAttribute="top" secondItem="8iL-UF-z5N" secondAttribute="top" id="82F-ne-Efh"/>
-                            <constraint firstItem="Ig7-3U-KF6" firstAttribute="trailing" secondItem="vAl-fk-ahh" secondAttribute="trailing" id="Ba9-nB-hen"/>
                             <constraint firstItem="bgN-IV-Izu" firstAttribute="top" secondItem="vAl-fk-ahh" secondAttribute="top" constant="10" id="CF4-CK-8oF"/>
-                            <constraint firstItem="Ig7-3U-KF6" firstAttribute="leading" secondItem="vAl-fk-ahh" secondAttribute="leading" id="ClF-j7-GYf"/>
                             <constraint firstItem="vAl-fk-ahh" firstAttribute="trailing" secondItem="bgN-IV-Izu" secondAttribute="trailing" constant="15" id="DdL-xL-Ap8"/>
-                            <constraint firstItem="Ig7-3U-KF6" firstAttribute="bottom" secondItem="vAl-fk-ahh" secondAttribute="bottom" id="Iob-zD-F5X"/>
+                            <constraint firstItem="Ig7-3U-KF6" firstAttribute="leading" secondItem="8iL-UF-z5N" secondAttribute="leading" id="En9-UB-SN9"/>
+                            <constraint firstItem="Ig7-3U-KF6" firstAttribute="bottom" secondItem="vAl-fk-ahh" secondAttribute="bottom" id="RvD-At-ddV"/>
+                            <constraint firstAttribute="trailing" secondItem="Ig7-3U-KF6" secondAttribute="trailing" id="u7X-dk-9Wl"/>
+                            <constraint firstItem="Ig7-3U-KF6" firstAttribute="top" secondItem="8iL-UF-z5N" secondAttribute="top" id="vXs-bw-ybG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vAl-fk-ahh"/>
                     </view>
