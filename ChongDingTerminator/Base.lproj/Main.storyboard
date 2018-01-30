@@ -194,9 +194,13 @@
                                     <outlet property="back" destination="bgN-IV-Izu" id="Gih-VQ-Sbw"/>
                                 </connections>
                             </webView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgN-IV-Izu">
-                                <rect key="frame" x="334" y="30" width="31" height="30"/>
-                                <state key="normal" title="关闭"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgN-IV-Izu">
+                                <rect key="frame" x="320" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="FlI-60-Smp"/>
+                                    <constraint firstAttribute="height" constant="40" id="OXz-CP-RhZ"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
                                 <connections>
                                     <action selector="backToMain:" destination="Ig7-3U-KF6" eventType="touchUpInside" id="cvt-x0-fAX"/>
                                 </connections>
@@ -204,12 +208,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vAl-fk-ahh" firstAttribute="trailing" secondItem="bgN-IV-Izu" secondAttribute="trailing" constant="10" id="7e9-zD-blV"/>
+                            <constraint firstItem="Ig7-3U-KF6" firstAttribute="top" secondItem="8iL-UF-z5N" secondAttribute="top" id="82F-ne-Efh"/>
                             <constraint firstItem="Ig7-3U-KF6" firstAttribute="trailing" secondItem="vAl-fk-ahh" secondAttribute="trailing" id="Ba9-nB-hen"/>
                             <constraint firstItem="bgN-IV-Izu" firstAttribute="top" secondItem="vAl-fk-ahh" secondAttribute="top" constant="10" id="CF4-CK-8oF"/>
                             <constraint firstItem="Ig7-3U-KF6" firstAttribute="leading" secondItem="vAl-fk-ahh" secondAttribute="leading" id="ClF-j7-GYf"/>
+                            <constraint firstItem="vAl-fk-ahh" firstAttribute="trailing" secondItem="bgN-IV-Izu" secondAttribute="trailing" constant="15" id="DdL-xL-Ap8"/>
                             <constraint firstItem="Ig7-3U-KF6" firstAttribute="bottom" secondItem="vAl-fk-ahh" secondAttribute="bottom" id="Iob-zD-F5X"/>
-                            <constraint firstItem="Ig7-3U-KF6" firstAttribute="top" secondItem="8iL-UF-z5N" secondAttribute="top" id="Wyq-N5-2hk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vAl-fk-ahh"/>
                     </view>
@@ -315,6 +319,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="128" height="128"/>
         <image name="first" width="30" height="30"/>
         <image name="weixin" width="48" height="48"/>
         <image name="weixin_friend" width="48" height="48"/>

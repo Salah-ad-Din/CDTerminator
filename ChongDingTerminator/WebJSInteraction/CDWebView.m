@@ -151,7 +151,8 @@
     }
     self.bLoadSuccess = YES;
     [self endRefresh];
-    if ([self.request.URL.absoluteString containsString:@"account.xiaomi.com"]) {
+    if ([self.request.URL.absoluteString containsString:@"account.xiaomi.com"]
+        || [self.request.URL.absoluteString containsString:@"pay.xiaomi.com"]) {
         self.back.hidden = NO;
     } else {
         self.back.hidden = YES;
