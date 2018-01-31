@@ -29,6 +29,7 @@
 @property(nonatomic, strong) IBOutlet UIButton *back;
 
 @property(nonatomic, strong) JSContext *context;
+@property(nonatomic, strong) CDActionProxy *cdActionProxy;
 @property(nonatomic, strong) NSURL *originUrl;
 @property(nonatomic, assign) BOOL bLoadSuccess;
 @property(nonatomic, assign) BOOL bRedirect;
@@ -55,6 +56,7 @@
         self.scrollView.bounces = NO;
         self.scrollView.emptyDataSetSource = self;
         self.scrollView.emptyDataSetDelegate = self;
+        self.scrollView.backgroundColor = [UIColor clearColor];
         self.backgroundColor = UICOLOR_WITH_HEX_RGB(2c107f);
         self.bLoadSuccess = YES;
         self.bRedirect = NO;
@@ -143,9 +145,7 @@
     NSLog(@"webViewDidFinishLoad");
     //首先创建JSContext 对象（此处通过当前webView的键获取到jscontext)
     _context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    CDActionProxy *cdActionProxy = [[CDActionProxy alloc] init];
-    cdActionProxy.delegate = self;
-    _context[@"CWInterface"] = cdActionProxy;
+    _context[@"CWInterface"] = self.cdActionProxy;
 
     if ([self.cdDelegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
         [self.cdDelegate webViewDidFinishLoad:self];
@@ -165,6 +165,15 @@
     NSLog(@"didFailLoadWithError");
     self.bLoadSuccess = NO || self.bRedirect;
     [self endRefresh];
+}
+
+#pragma mark - property
+- (CDActionProxy*)cdActionProxy {
+    if (!_cdActionProxy) {
+        _cdActionProxy = [CDActionProxy new];
+        _cdActionProxy.delegate = self;
+    }
+    return _cdActionProxy;
 }
 
 #pragma mark - EmpytPage
@@ -249,8 +258,11 @@
     }
 }
 
-- (void)shareSuccess {
+- (void)shareSuccess:(NSArray*)apps {
     [_context evaluateScript:@"shareSuccess()"];
+    if ([self.cdActionProxy respondsToSelector:@selector(gotoApp:)]) {
+        [self.cdActionProxy gotoApp:apps];
+    }
 }
 
 #pragma mark - network

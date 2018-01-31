@@ -76,7 +76,7 @@
                                                    completion:^(id result, NSError *error) {
                                                        @strongify(self);
                                                        if (!error) {
-                                                           [self.webView shareSuccess];
+                                                           [self.webView shareSuccess:model.extInfo.appleApps];
                                                        } else {
                                                            NSLog(@"%@", error);
                                                        }
@@ -104,6 +104,7 @@
     UMShareImageObject *object = [UMShareImageObject shareObjectWithTitle:model.title
                                                                     descr:model.descript
                                                                 thumImage:model.shareImgUrl];
+    object.shareImage = model.shareImgUrl;
     return object;
 }
 

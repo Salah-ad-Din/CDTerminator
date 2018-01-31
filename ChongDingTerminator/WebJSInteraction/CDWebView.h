@@ -22,6 +22,6 @@
 
 - (void)loadURL:(NSString *)url;
 
-- (void)shareSuccess;
+- (void)shareSuccess:(NSArray*)app;
 
 @end

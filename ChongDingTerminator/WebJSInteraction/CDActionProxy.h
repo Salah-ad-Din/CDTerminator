@@ -35,4 +35,6 @@ JSExportAs(sendSysNotification,
 
 @property(nonatomic, weak) id<CDActionDelegate> delegate;
 
+- (void)gotoApp:(NSArray*)apps;
+
 @end

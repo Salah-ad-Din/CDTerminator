@@ -11,14 +11,15 @@
 @implementation AppInfo
 @end
 
-@implementation OpenDownloadModel
-
+@implementation ExtInfo
++ (NSDictionary*)modelContainerPropertyGenericClass {
+    return @{@"appleApps" : [AppInfo class]
+             };
+}
 @end
 
 @implementation ShareModel
-
 @end
 
 @implementation LocalNotificationModel
-
 @end

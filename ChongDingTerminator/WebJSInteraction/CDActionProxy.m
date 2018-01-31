@@ -15,17 +15,21 @@
 @implementation CDActionProxy
 
 - (void)openOrDownloadApk:(id)jsonStr {
-    NSLog(@"openOrDownloadApk : %@", jsonStr);
+    NSLog(@"AppInfo : %@", jsonStr);
     if (!jsonStr) {
         return;
     }
-    NSArray<OpenDownloadModel *> *model = [NSArray yy_modelArrayWithClass:[OpenDownloadModel class] json:jsonStr];
+    NSArray<AppInfo *> *model = [NSArray yy_modelArrayWithClass:[AppInfo class] json:jsonStr];
     if ([model count]  == 0) {
         [CDHud alertWithTitle:@"参数错误" message:@"打开失败"];
         return;
     }
     
-    for (AppInfo* a in model) {
+    [self gotoApp:model];
+}
+
+- (void)gotoApp:(NSArray*)apps {
+    for (AppInfo* a in apps) {
         NSURL *scheme = [NSURL URLWithString:a.scheme];
         
         if (!scheme) {
@@ -41,37 +45,12 @@
     }
     
     MAIN_THREAD({
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model[0].appUrl]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:((AppInfo*)apps[0]).appUrl]];
     });
 }
 
 - (void)shareApp:(id)jsonStr {
     NSLog(@"shareApp : %@", jsonStr);
-//    jsonStr = @"{\n"
-// " \"title\": \"test title\",\n"
-// " \"shareType\": \"1\",\n"
-// " \"descript\": \"nothing is improtent\",\n"
-// " \"shareImgUrl\": \"https://i.don't.know\",\n"
-// " \"directUrl\": \"http://x.v.xiaomi.com/test\",\n"
-// " \"extInfo\": {\n"
-// "  \"name\": \"YY\",\n"
-// "  \"group\": \"152634\",\n"
-// "  \"androidApp\": [{\n"
-// "   \"packageName\": \"com.xiaomi.test\",\n"
-// "   \"scheme\": \"http://\",\n"
-// "   \"downloadUrl\": \"http://downloan.xiaomi.com\",\n"
-// "   \"appUrl\": \"https://x.v.xiaomi.com\",\n"
-// "   \"appName\": \"冲顶大会\"\n"
-// "  }],\n"
-// "  \"appleApp\": [{\n"
-// "   \"packageName\": \"com.xiaomi.test\",\n"
-// "   \"scheme\": \"http://\",\n"
-// "   \"downloadUrl\": \"http://downloan.xiaomi.com\",\n"
-// "   \"appUrl\": \"https://x.v.xiaomi.com\",\n"
-// "   \"appName\": \"冲顶大会\"\n"
-// "  }]\n"
-// " }\n"
-// "}";
     if (!jsonStr) {
         return;
     }
