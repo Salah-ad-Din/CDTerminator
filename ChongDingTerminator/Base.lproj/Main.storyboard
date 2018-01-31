@@ -187,6 +187,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig7-3U-KF6" customClass="CDWebView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="back" destination="bgN-IV-Izu" id="Gih-VQ-Sbw"/>
+                                </connections>
+                            </webView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgN-IV-Izu">
                                 <rect key="frame" x="320" y="30" width="40" height="40"/>
                                 <constraints>
@@ -198,13 +205,6 @@
                                     <action selector="backToMain:" destination="Ig7-3U-KF6" eventType="touchUpInside" id="cvt-x0-fAX"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig7-3U-KF6" customClass="CDWebView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="back" destination="bgN-IV-Izu" id="Gih-VQ-Sbw"/>
-                                </connections>
-                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="0.17185655236244202" green="0.065046422183513641" blue="0.49876660108566284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
